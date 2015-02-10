@@ -13,9 +13,9 @@ public class ConvertUtil {
 	    return b & 0xFF;  
 	}
 	
-	public static int byteArrayToInt(byte[] b,MachineCharacter mc) { 
+	public static int byteArrayToInt(int[] b,MachineCharacter mc) { 
 		if(b.length<4){
-			byte[] tmp=new byte[4];
+			int[] tmp=new int[4];
 			for(int i=0;i<4;i++){
 				if(i>=b.length){
 					tmp[i]=0;
@@ -43,21 +43,21 @@ public class ConvertUtil {
 		}
 	}
 	
-	public static byte[] intToByteArray(int a,MachineCharacter mc) {
+	public static int[] intToByteArray(int a,MachineCharacter mc) {
 		if(mc==MachineCharacter.LITTLE_ENDIAN){
-			return new byte[] {
-					(byte) (a & 0xFF),
-					(byte) ((a >> 8) & 0xFF),
-					(byte) ((a >> 16) & 0xFF),
-			        (byte) ((a >> 24) & 0xFF)
+			return new int[] {
+					(int) (a & 0xFF),
+					(int) ((a >> 8) & 0xFF),
+					(int) ((a >> 16) & 0xFF),
+			        (int) ((a >> 24) & 0xFF)
 			};
 		}
 		else if(mc==MachineCharacter.BIG_ENDIAN){
-			return new byte[] {
-			        (byte) ((a >> 24) & 0xFF),
-			        (byte) ((a >> 16) & 0xFF),
-			        (byte) ((a >> 8) & 0xFF),
-			        (byte) (a & 0xFF)
+			return new int[] {
+			        (int) ((a >> 24) & 0xFF),
+			        (int) ((a >> 16) & 0xFF),
+			        (int) ((a >> 8) & 0xFF),
+			        (int) (a & 0xFF)
 			};
 		}
 		else{

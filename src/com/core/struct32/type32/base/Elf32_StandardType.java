@@ -7,7 +7,7 @@ import com.core.util.ConvertUtil;
 
 public abstract class Elf32_StandardType extends Elf32_Type implements Elf32_Calc,NumConvert{
 
-	public Elf32_StandardType(int size, byte[] value, Integer offset) {
+	public Elf32_StandardType(int size, int[] value, Integer offset) {
 		super(size, value, offset);
 	}
 

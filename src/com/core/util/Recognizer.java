@@ -5,7 +5,7 @@ import com.core.struct32.flag.ElfMachine;
 
 public class Recognizer {
 
-	public static String recognizeElf32Type(String hex){
+	public static String recognizeElf32HeaderType(String hex){
 		String s="";
 		switch(Integer.valueOf(hex)){
 			case ElfFileType.ET_NONE:
@@ -34,7 +34,7 @@ public class Recognizer {
 		return s;
 	}
 	
-	public static String recognizeElf32Machine(String hex){
+	public static String recognizeElf32HeaderMachine(String hex){
 		String s="";
 		switch(Integer.valueOf(hex)){
 			case ElfMachine.EM_NONE:
@@ -69,6 +69,27 @@ public class Recognizer {
 					s="未知";
 				}
 				break;
+		}
+		return s;
+	}
+	
+	public static String recognizeElf32HeaderVersion(String hex){
+		String s="";
+		switch(Integer.valueOf(hex)){
+			case 1:
+				s="Current Version";
+				break;
+			default:
+				s="Error Version";
+				break;
+		}
+		return s;
+	}
+	
+	public static String recognizeElf32ProgramHeaderType(String hex){
+		String s="";
+		switch(Integer.valueOf(hex)){
+			
 		}
 		return s;
 	}

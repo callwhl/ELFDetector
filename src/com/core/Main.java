@@ -19,6 +19,7 @@ public class Main {
 			ElfManager em=new ElfManager(fileMemMap);
 			em.printElfHeader();
 			em.printElfProgramHeaderTable();
+			em.printElfSectionHeaderTable();
 		}
 		catch(Exception e){
 			e.printStackTrace();
